@@ -46,6 +46,7 @@ class Download {
 
 fun main() {
     var download = Download()
-    download.downloadUsingNIO("https://services.gradle.org/distributions/gradle-7.5.1-bin.zip", "D:${File.separator}a")
+//    download.downloadUsingNIO("", "D:${File.separator}a")
+//    download.downloadUsingNIO("https://services.gradle.org/distributions/gradle-7.5.1-bin.zip", "D:${File.separator}a")
 //    download.download("D:\\a", "https://services.gradle.org/distributions/gradle-7.5.1-bin.zip", 1)
 }
