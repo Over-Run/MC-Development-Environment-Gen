@@ -1,6 +1,8 @@
 import androidx.compose.material.MaterialTheme
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Colors
 import androidx.compose.material.Text
@@ -20,21 +22,22 @@ import org.overrun.compose.progressBar
 @Composable
 @Preview
 fun App() {
-    var text by remember { mutableStateOf("Hello, World!") }
+    val text = remember { mutableStateOf("Hello, World!") }
+    val progress = remember { mutableStateOf(0f) }
 
     MaterialTheme {
         Button(onClick = {
-            text = "Hello, Desktop!"
+            text.value = "Hello, Desktop!"
         }) {
-            Text(text)
+            Text(text.value)
         }
-        Column {
+        Column(modifier = Modifier.padding(
+            top = 100.dp
+        )) {
             progressBar(
-                modifier = Modifier.align(Alignment.CenterHorizontally),
-                progress = 0.4f,
-                color = Color.Blue,
-                cornerRadius = 5.dp,
-                backgroundColor = Color.Red
+                modifier = Modifier,
+                progress = progress.value,
+                color = Color.Green
             )
         }
     }
